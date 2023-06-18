@@ -1,13 +1,16 @@
 import { useState } from "react";
 import css from './Form.module.css'
 import { useDispatch, useSelector } from "react-redux";
-import { addContact } from "redux/contactSlice";
-import { getContactList } from 'redux/contactSlice';
+import { addContact } from "redux/operations";
+import { selectContacts } from "redux/selectors"
+
+//import { addContact } from "redux/contactSlice";
+//import { getContactList } from 'redux/contactSlice';
 //import PropTypes from 'prop-types';
 
   const Form = () => {
   const dispatch = useDispatch();
-  const contacts = useSelector(getContactList);
+  const contacts = useSelector(selectContacts);
   
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');

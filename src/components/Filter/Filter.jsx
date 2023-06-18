@@ -1,10 +1,11 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { filterContacts , getFilterList } from 'redux/filterSlice';
+import { filterContacts } from 'redux/filterSlice';
+import { selectStatusFilter } from "redux/selectors";
 import PropTypes from 'prop-types';
 
 export const Filter = () => {
     const dispatch = useDispatch();
-    const filter = useSelector(getFilterList);
+    const filter = useSelector(selectStatusFilter);
 
     const handleFilterChange = event => dispatch(filterContacts(event.currentTarget.value));
 
