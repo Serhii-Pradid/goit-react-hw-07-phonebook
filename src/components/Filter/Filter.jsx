@@ -7,13 +7,14 @@ export const Filter = () => {
     const dispatch = useDispatch();
     const filter = useSelector(selectStatusFilter);
 
-    const handleFilterChange = event => dispatch(filterContacts(event.currentTarget.value));
+const handleFilterChange = event => dispatch(filterContacts(event.currentTarget.value));
 
     return (
     <ul>
         <label> Find contacts by name:
       <input 
       type="text" 
+      name="filter"
       value={filter} 
       placeholder='Name Surname'
       onChange={handleFilterChange} />
@@ -23,6 +24,6 @@ export const Filter = () => {
 }
 
 Filter.propTypes ={
-    value: PropTypes.string.isRequired,
-    onChange: PropTypes.func.isRequired
+    value: PropTypes.string,
+    onChange: PropTypes.func
 }

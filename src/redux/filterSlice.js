@@ -5,7 +5,7 @@ const filterInitialState = '';
 
 const filterSlice = createSlice({
 
-    name: 'filter',
+    name: 'filters',
     initialState: filterInitialState,
 
     reducers: {
@@ -14,8 +14,6 @@ const filterSlice = createSlice({
         }, 
     }
 });
-
-//export const getFilterList = state => state.filter;
 
 export const {filterContacts} = filterSlice.actions;
 export const filterReducer = filterSlice.reducer;

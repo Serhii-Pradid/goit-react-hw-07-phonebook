@@ -4,9 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { addContact } from "redux/operations";
 import { selectContacts } from "redux/selectors"
 
-//import { addContact } from "redux/contactSlice";
-//import { getContactList } from 'redux/contactSlice';
-//import PropTypes from 'prop-types';
 
   const Form = () => {
   const dispatch = useDispatch();
@@ -44,7 +41,7 @@ const handleSubmit = event => {
     return alert(`${formName} is already in contacts`);
   }
 
-  dispatch(addContact(formName, formNumber));
+  dispatch(addContact({name:formName, number: formNumber}));
   //form.reset();
   setName('');
   setNumber('');
