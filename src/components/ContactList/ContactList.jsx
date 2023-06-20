@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { deleteContact } from "redux/operations";
 import { selectContacts, selectStatusFilter } from "redux/selectors"
 
+
 export const ContactList = () => {
     const dispatch = useDispatch();
 
@@ -14,7 +15,7 @@ export const ContactList = () => {
   ];
 
     const handleDeleteContact = contactId => {
-        dispatch(deleteContact(contactId));
+          dispatch(deleteContact(contactId));
     };
       
   //console.log(visibleContacts)
@@ -27,7 +28,7 @@ export const ContactList = () => {
                 <li key={id} >
                     <p> {name} : {number} </p>
                     <button className={css.buttonDelete}  
-                            onClick={ () => dispatch(handleDeleteContact(id)) }> Delete </button>
+                            onClick={ () => (handleDeleteContact(id)) }> Delete </button>
                 </li>
             ))}
     </ul>
